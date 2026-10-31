@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rewrite100</title>
+  </head>
+  <body>
+    <header id="topbar">
+      <div class="topbar-left">
+        <button id="prevBtn" title="Previous problem (Ctrl+Left)">← Prev</button>
+        <button id="nextBtn" title="Next problem (Ctrl+Right)">Next →</button>
+      </div>
+      <div class="topbar-center">
+        <h1 id="problemTitle"></h1>
+        <span id="difficultyBadge"></span>
+        <span id="patternTag"></span>
+        <span id="authorBadge" hidden>Written by Claude</span>
+      </div>
+      <div class="topbar-right">
+        <label id="bonusToggle"><input type="checkbox" id="bonusCheckbox" /> <span id="bonusLabel">Include bonus</span></label>
+        <span id="counter"></span>
+        <button id="resetBtn" title="Reset my editor (Ctrl+R)">Reset</button>
+        <button id="toggleBtn" title="Toggle left pane (Ctrl+H)">Hide ref</button>
+      </div>
+    </header>
+    <main id="split">
+      <section id="leftPane">
+        <div id="statement"></div>
+        <ol id="steps"></ol>
+        <div id="complexity"></div>
+        <div id="refEditor" class="editor"></div>
+        <div id="noteBox" hidden></div>
+      </section>
+      <div id="divider" title="Drag to resize"></div>
+      <section id="rightPane">
+        <div id="userEditor" class="editor"></div>
+      </section>
+    </main>
+    <footer id="statusbar">
+      <span id="stats">Start typing to begin.</span>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+#topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #252526;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbar-center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+#problemTitle {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  white-space: nowrap;
+}
+
+#difficultyBadge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+#difficultyBadge.easy {
+  background: #1a3a2a;
+  color: #4ade80;
+}
+
+#difficultyBadge.medium {
+  background: #3a2f1a;
+  color: #fbbf24;
+}
+
+#difficultyBadge.hard {
+  background: #3a1a1a;
+  color: #f87171;
+}
+
+#patternTag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #2d2d30;
+  color: #9cdcfe;
+  white-space: nowrap;
+}
+
+#counter {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: #9d9d9d;
+}
+
+button {
+  font-size: 13px;
+  padding: 5px 12px;
+  border: 1px solid #3c3c3c;
+  border-radius: 4px;
+  background: #2d2d30;
+  color: #d4d4d4;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3e3e42;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+#split {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+#leftPane {
+  width: 50%;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: #1e1e1e;
+}
+
+#leftPane.hidden {
+  display: none;
+}
+
+#steps {
+  margin: 0;
+  padding: 12px 12px 12px 34px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #b5b5b5;
+  border-bottom: 1px solid #3c3c3c;
+  max-height: 32%;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#steps li::marker {
+  color: #569cd6;
+  font-weight: 600;
+}
+
+#refEditor {
+  flex: 1;
+  min-height: 0;
+}
+
+#divider {
+  width: 6px;
+  flex-shrink: 0;
+  cursor: col-resize;
+  background: #3c3c3c;
+}
+
+#divider:hover,
+#divider.dragging {
+  background: #569cd6;
+}
+
+#rightPane {
+  flex: 1;
+  display: flex;
+  min-width: 200px;
+  min-height: 0;
+}
+
+#userEditor {
+  flex: 1;
+  min-height: 0;
+}
+
+.editor {
+  overflow: hidden;
+}
+
+#statusbar {
+  padding: 8px 12px;
+  font-size: 13px;
+  background: #252526;
+  border-top: 1px solid #3c3c3c;
+  font-variant-numeric: tabular-nums;
+}
+
+#stats.complete {
+  color: #4ade80;
+  font-weight: 600;
+}
+
+.mismatch-highlight {
+  background: rgba(255, 0, 0, 0.35);
+  border-bottom: 2px solid #ff0000;
+}
+
+#authorBadge {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #2d2d30;
+  color: #ce9178;
+  white-space: nowrap;
+}
+
+#bonusToggle {
+  font-size: 13px;
+  color: #b5b5b5;
+  white-space: nowrap;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#statement {
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #d4d4d4;
+  border-bottom: 1px solid #3c3c3c;
+  max-height: 22%;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+#complexity {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: #9d9d9d;
+  border-bottom: 1px solid #3c3c3c;
+  flex-shrink: 0;
+}
+
+#complexity:empty {
+  display: none;
+}
+
+#noteBox {
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8a8a8a;
+  background: #252526;
+  border-top: 1px solid #3c3c3c;
+  max-height: 20%;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.drill-header-zone {
+  white-space: pre;
+  color: #6a9950;
+  padding-left: 12px;
+  user-select: none;
+}
